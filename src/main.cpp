@@ -41,7 +41,7 @@ int main() {
 
 
 	    // Acceder a un libro en el vector
-	    //cout << objetos[0]->to_string() << endl;
+	    cout << objetos[0]->to_string() << endl;
 	   // cout << objetos[1]->to_string() << endl;
 	   //cout << objetos[2]->to_string() << endl;
 	   // cout << objetos[3]->to_string() << endl;
@@ -52,17 +52,22 @@ int main() {
 
 	    ninos[0]->agregarObjeto(objetos[0]);
 	    ninos[0]->agregarObjeto(objetos[1]);
-	   // ninos[0]->agregarObjeto(objetos[3]);
-	    //ninos[1]->agregarObjeto(objetos[4]);
-	    //ninos[1]->agregarObjeto(objetos[5]);
+	   ninos[0]->agregarObjeto(objetos[3]);
+	    ninos[1]->agregarObjeto(objetos[4]);
+	    ninos[1]->agregarObjeto(objetos[5]);
 
 	    objetos[0]->AgregarNino(ninos[0]);
 	    objetos[1]->AgregarNino(ninos[0]);
 
-	    delete objetos[0];
-	  	ninos[0]->eliminoObjeto(objetos[0]);
 
+	    	     // el +0 indica la posicion donde se encuentra el objeto a eliminar
+
+	    ninos[0]->eliminoObjeto(objetos[0]);
+	    delete objetos[0];
+	    objetos.erase(objetos.begin());
 	    vector<string> objetosPrestadosNino0 = ninos[0]->listarObjetosPrestados();
+
+
 
 	    // Iterar sobre la lista de objetos prestados y mostrarlos
 	    cout << "Objetos prestados al primer niño:" << endl;
@@ -72,6 +77,7 @@ int main() {
 	    cout << "FIN prestados"<<endl;
 	    // Obtener la lista de objetos prestados para el segundo niño (ninos[1])
 	    vector<string> objetosPrestadosNino1 = ninos[1]->listarObjetosPrestados();
+
 
 	    // Iterar sobre la lista de objetos prestados y mostrarlos
 	    cout << "Objetos prestados al segundo niño:" << endl;
@@ -102,6 +108,8 @@ int main() {
 	                objetosRotos.push_back(dtObjetoRoto);
 	            }
 	    }
+
+
 	    cout<<"Objetos Rotos:"<<endl;
 	    //Coutea objetos Rotos no va para la implementacion final solo para Test
 	    for (const DTObjetoRoto* pObjetoRoto : objetosRotos) {

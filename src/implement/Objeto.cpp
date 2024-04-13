@@ -36,3 +36,7 @@ Nino* Objeto::GetNino() const{
 void Objeto::AgregarNino(Nino* nino){
 	this->nino=nino;
 }
+
+void Objeto::SetninoNull() {
+    this->nino = nullptr;
+}

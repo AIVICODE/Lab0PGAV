@@ -31,7 +31,7 @@ class Objeto {
 	virtual ~Objeto();
 
 	void AgregarNino(Nino* nino);
-
+	void SetninoNull();
 	Nino* GetNino() const;
 	virtual string to_string() = 0;
 	string GetNombre() const;

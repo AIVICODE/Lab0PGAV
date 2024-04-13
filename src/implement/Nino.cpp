@@ -48,7 +48,7 @@ vector<string> Nino::listarObjetosPrestados(){
 }
 
 void Nino::agregarObjeto(Objeto* objeto){
-	 objetos.push_back(objeto);
+	 this->objetos.push_back(objeto);
 }
 
 string Nino::GetNombre() const{
@@ -57,13 +57,15 @@ string Nino::GetNombre() const{
 
 
 void Nino::eliminoObjeto(Objeto * objeto){
-	for (auto it = this->objetos.begin(); it != this->objetos.end(); ++it) {
-	        // Verificar si el puntero apunta al mismo objeto que deseamos eliminar
-	        if (*it == objeto) {
-	            // Eliminar el objeto del vector
-	            this->objetos.erase(it);
-	            // Terminar el ciclo después de eliminar el objeto
-	            break;
+	for (auto it = this->objetos.begin(); it != this->objetos.end(); ) {
+	        // Verificar si el nombre del objeto en el vector es igual al nombre del objeto pasado como parámetro
+	        if ((*it)->GetNombre() == objeto->GetNombre()) {
+
+	            // Eliminar el elemento del vector y avanzar al siguiente elemento
+	            it = this->objetos.erase(it);
+	        } else {
+	            // Avanzar al siguiente elemento si el nombre no coincide
+	            ++it;
 	        }
 	    }
 }
