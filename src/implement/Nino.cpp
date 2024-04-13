@@ -55,3 +55,16 @@ string Nino::GetNombre() const{
 	return this->nombre;
 }
 
+
+void Nino::eliminoObjeto(Objeto * objeto){
+	for (auto it = this->objetos.begin(); it != this->objetos.end(); ++it) {
+	        // Verificar si el puntero apunta al mismo objeto que deseamos eliminar
+	        if (*it == objeto) {
+	            // Eliminar el objeto del vector
+	            this->objetos.erase(it);
+	            // Terminar el ciclo después de eliminar el objeto
+	            break;
+	        }
+	    }
+}
+

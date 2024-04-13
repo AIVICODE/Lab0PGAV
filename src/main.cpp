@@ -41,25 +41,26 @@ int main() {
 
 
 	    // Acceder a un libro en el vector
-	    cout << objetos[0]->to_string() << endl;
-	    cout << objetos[1]->to_string() << endl;
-	    cout << objetos[2]->to_string() << endl;
-	    cout << objetos[3]->to_string() << endl;
-	    cout << objetos[4]->to_string() << endl;
-	    cout << objetos[5]->to_string() << endl;
+	    //cout << objetos[0]->to_string() << endl;
+	   // cout << objetos[1]->to_string() << endl;
+	   //cout << objetos[2]->to_string() << endl;
+	   // cout << objetos[3]->to_string() << endl;
+	   // cout << objetos[4]->to_string() << endl;
+	   // cout << objetos[5]->to_string() << endl;
 
 
 
-	    ninos[0]->agregarObjeto(objetos[0]); // FALTA APUNTAR OBJETOS A NINOS
+	    ninos[0]->agregarObjeto(objetos[0]);
 	    ninos[0]->agregarObjeto(objetos[1]);
-	    ninos[0]->agregarObjeto(objetos[3]);
-	    ninos[1]->agregarObjeto(objetos[4]);
-	    ninos[1]->agregarObjeto(objetos[5]);
+	   // ninos[0]->agregarObjeto(objetos[3]);
+	    //ninos[1]->agregarObjeto(objetos[4]);
+	    //ninos[1]->agregarObjeto(objetos[5]);
 
 	    objetos[0]->AgregarNino(ninos[0]);
 	    objetos[1]->AgregarNino(ninos[0]);
 
-
+	    delete objetos[0];
+	  	ninos[0]->eliminoObjeto(objetos[0]);
 
 	    vector<string> objetosPrestadosNino0 = ninos[0]->listarObjetosPrestados();
 
@@ -68,7 +69,7 @@ int main() {
 	    for (const string& objeto : objetosPrestadosNino0) {
 	        cout << objeto << endl;
 	    }
-
+	    cout << "FIN prestados"<<endl;
 	    // Obtener la lista de objetos prestados para el segundo niño (ninos[1])
 	    vector<string> objetosPrestadosNino1 = ninos[1]->listarObjetosPrestados();
 
@@ -111,6 +112,7 @@ int main() {
 	            std::cout << *pObjetoRoto << std::endl;
 	        }
 	    }
+
 
 	    // Liberar memoria de los libros creados dinámicamente
 	    for (auto objeto: objetos) {

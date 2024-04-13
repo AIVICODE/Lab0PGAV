@@ -27,7 +27,7 @@ class Nino {
 		Nino(const std::string& nombre, int edad, const std::string& direccion, const std::string& telefono)
 		        : nombre(nombre), edad(edad), direccion(direccion), telefono(telefono) {}
 		virtual ~Nino();
-
+		void eliminoObjeto(Objeto * objeto);
 		string GetNombre() const;
 		void agregarObjeto(Objeto* objeto);
 
